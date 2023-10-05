@@ -7,20 +7,26 @@ public static void insertData()throws Exception{
 	String url="jdbc:mysql://127.0.0.1:3306/java_connectivity";
 	String username="root";
 	String password="2001";
-	String Query ="insert into jdbc values(?,?,?,)";
+	String Query ="insert into jdbc values(?,?,?,?)";
 	Connection con=DriverManager.getConnection(url,username,password);
 	PreparedStatement pst=con.prepareStatement(Query);
-	pst.setString(1,"vishwa");
-	pst.setInt(2, 22);
-	pst.setString(3,"email");
+	pst.setString(1,"kanan");
+	pst.setInt(2, 23);
+	pst.setString(3,"email@gami.com");
+	pst.setInt(4, 23);
 	pst.executeUpdate();
 	con.close();
-	}}
-	/*public static void main(String[] args)throws Exception {
+	}} 
+
+	
+	
+	
+	
+	 /*public static void main(String[] args)throws Exception {
 		getData();
 	}
 public static void getData()throws Exception{
-	String url="jdbc:mysql://127.0.0.1:3306/jdbc";
+	String url="jdbc:mysql://127.0.0.1:3306/java_connectivity";
 	String username="root";
 	String password="2001";
 	String Query ="Select *from jdbc";
@@ -32,19 +38,44 @@ public static void getData()throws Exception{
 		System.out.println(rst.getInt(2));
 		System.out.println(rst.getString(3));
 	}
-	con.close();}*/
+	con.close();}}
 	
 
 
-/*public static void updatedata()throws Exception {
-	String url="jdbc:mysql://127.0.0.1:3306/java";
+
+	
+	public static void main(String[] args)throws Exception {
+		updateData();
+	}
+	public static void updateData()throws Exception {
+	String url="jdbc:mysql://127.0.0.1:3306/java_connectivity";
 	String username="root";
-	String password="2305";
-	int id=23;
-	String Query="update employee set NAME ='nisha' where ID=23";
+	String password="2001";
+	int age =22;
+	String Query="update jdbc set NAME ='booomika' where Age=22";
 	Connection con=DriverManager. getConnection(url,username,password);
 	PreparedStatement pst=con.prepareStatement(Query);
 	int rows=pst.executeUpdate();
 	System.out.println(rows);
 	con.close();
-}*/
+}}
+
+
+
+public static void main(String[] args)throws Exception {
+	DeleteData();	}
+
+
+
+public static void DeleteData()throws Exception{
+String url="jdbc:mysql://127.0.0.1:3306/java_connectivity";
+String username="root";
+String password="2001";
+String name="booomika";
+String Query= "delete from jdbc where name='booomika'";
+Connection con=DriverManager.getConnection(url, username, password);
+PreparedStatement pst= con.prepareStatement(Query);
+int rows =pst.executeUpdate();
+System.out.println("rows");
+con.close();
+}}*/
